@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7DE7CC5-4590-47F8-8E91-5B9AB9C78D96}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Joy</RootNamespace>
+    <AssemblyName>Joy</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cyotek.Windows.Forms.ColorPicker, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cyotek.Windows.Forms.ColorPicker.1.7.2\lib\net35\Cyotek.Windows.Forms.ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard1.3\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking.ThemeVS2015, Version=3.0.6.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.ThemeVS2015.3.0.6\lib\net40\WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\AppConfig.cs" />
+    <Compile Include="Config\ConfigSectionFlags.cs" />
+    <Compile Include="Config\Configurator.cs" />
+    <Compile Include="Config\DefaultStyles.cs" />
+    <Compile Include="Config\FontFlags.cs" />
+    <Compile Include="Config\IndentationMode.cs" />
+    <Compile Include="Config\IndicatorConfig.cs" />
+    <Compile Include="Config\IndicatorKind.cs" />
+    <Compile Include="Config\IndicatorShape.cs" />
+    <Compile Include="Config\IndicatorStyle.cs" />
+    <Compile Include="Config\Style.cs" />
+    <Compile Include="Config\StyleConfig.cs" />
+    <Compile Include="Config\ThemeKind.cs" />
+    <Compile Include="Dispatcher.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\RegistryKeyExtensions.cs" />
+    <Compile Include="Forms\ColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\ColorEditRow.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\FindControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FindControl.Designer.cs">
+      <DependentUpon>FindControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StyleEventArgs.cs" />
+    <Compile Include="Forms\TinyXButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectExplorer\FileItem.cs" />
+    <Compile Include="ProjectExplorer\FileTreeModel.cs" />
+    <Compile Include="ProjectExplorer\FolderItem.cs" />
+    <Compile Include="ProjectExplorer\ItemBase.cs" />
+    <Compile Include="ProjectExplorer\RootItem.cs" />
+    <Compile Include="SyntaxHighlighting\FullRestyler.cs" />
+    <Compile Include="SyntaxHighlighting\FullRestylerManager.cs" />
+    <Compile Include="SyntaxHighlighting\LexicalStyler.cs" />
+    <Compile Include="SyntaxHighlighting\MaximumInfo.cs" />
+    <Compile Include="SyntaxHighlighting\RestyleFinishedEventArgs.cs" />
+    <Compile Include="SyntaxHighlighting\RestyleStartedEventArgs.cs" />
+    <Compile Include="SyntaxHighlighting\ThreadSafeEventHandler.cs" />
+    <Compile Include="Types\FindInfo.cs" />
+    <Compile Include="Forms\OptionsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionsDialog.Designer.cs">
+      <DependentUpon>OptionsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types\Position.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Forms\ProjectExplorerControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectExplorerControl.Designer.cs">
+      <DependentUpon>ProjectExplorerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\ReplaceControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReplaceControl.Designer.cs">
+      <DependentUpon>ReplaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types\RecentItems.cs" />
+    <Compile Include="Types\RecentItemsChangedEventArgs.cs" />
+    <Compile Include="Types\RecentItemsChangeAction.cs" />
+    <Compile Include="Types\ReplaceInfo.cs" />
+    <Compile Include="Types\StatusEventArgs.cs" />
+    <Compile Include="Config\TextEditorConfig.cs" />
+    <Compile Include="Forms\TextEditorControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TextEditorControl.Designer.cs">
+      <DependentUpon>TextEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Types\StyleKind.cs" />
+    <Compile Include="Win32\EnumFontFamiliesEx.cs" />
+    <Compile Include="Win32\FontData.cs" />
+    <Compile Include="Win32\Gdi32.cs" />
+    <EmbeddedResource Include="Forms\FindControl.resx">
+      <DependentUpon>FindControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsDialog.resx">
+      <DependentUpon>OptionsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectExplorerControl.resx">
+      <DependentUpon>ProjectExplorerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\ReplaceControl.resx">
+      <DependentUpon>ReplaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TextEditorControl.resx">
+      <DependentUpon>TextEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BetterControls\BetterControls.csproj">
+      <Project>{c5076714-ec55-412d-b7b7-3819e9ac5d1e}</Project>
+      <Name>BetterControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmileLibInterop\SmileLibInterop.vcxproj">
+      <Project>{14a6f891-5a01-4f7e-9b1d-ed7610f94dae}</Project>
+      <Name>SmileLibInterop</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\joy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cross.png" />
+    <EmbeddedResource Include="Resources\pencil.png" />
+    <EmbeddedResource Include="Resources\text_bold.png" />
+    <EmbeddedResource Include="Resources\text_italic.png" />
+    <EmbeddedResource Include="Resources\text_underline.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

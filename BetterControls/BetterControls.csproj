@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5076714-EC55-412D-B7B7-3819E9AC5D1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BetterControls</RootNamespace>
+    <AssemblyName>BetterControls</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.5.0\lib\netstandard1.3\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="MessageBox\BetterMessageBox.cs" />
+    <Compile Include="MessageBox\BetterMessageBoxButton.cs" />
+    <Compile Include="MessageBox\BetterMessageBoxData.cs" />
+    <Compile Include="MessageBox\BetterMessageBoxFluentInterface.cs" />
+    <Compile Include="MessageBox\BetterMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBox\BetterMessageBoxStandardIcons.cs" />
+    <Compile Include="Scrollbar\BetterHorizontalScrollbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scrollbar\BetterScrollbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scrollbar\BetterVerticalScrollbar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Scrollbar\Mark.cs" />
+    <Compile Include="Scrollbar\MarkStyle.cs" />
+    <Compile Include="Scrollbar\Range.cs" />
+    <Compile Include="Scrollbar\ScrollbarClickKind.cs" />
+    <Compile Include="Scrollbar\ScrollbarStyle.cs" />
+    <Compile Include="Themes\BetterControlsTheme.cs" />
+    <Compile Include="Themes\BetterScrollbarTheme.cs" />
+    <Compile Include="Themes\BetterTreeViewTheme.cs" />
+    <Compile Include="MessageBox\StandardImageKind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeView\BetterTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Themes\BetterTreeViewIcons.cs" />
+    <Compile Include="TreeView\ExpandIconMode.cs" />
+    <Compile Include="TreeView\ITreeItem.cs" />
+    <Compile Include="TreeView\ITreeItemDataSource.cs" />
+    <Compile Include="Collections\NotifyingList.cs" />
+    <Compile Include="TreeView\SilkIcons.cs" />
+    <Compile Include="TreeView\SilkIconData.cs" />
+    <Compile Include="TreeView\SimpleTreeItem.cs" />
+    <Compile Include="TreeView\SimpleTreeItemDataSource.cs" />
+    <Compile Include="TreeView\TreeItemEventArgs.cs" />
+    <Compile Include="TreeView\TreeItemInfo.cs" />
+    <Compile Include="TreeView\TreeItemState.cs" />
+    <Compile Include="TreeView\TreeLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

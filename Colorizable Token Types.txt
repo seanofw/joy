@@ -1,0 +1,86 @@
+Default text color
+Default background
+
+Non-executable content
+----------------------
+Whitespace (when shown)
+Comment (single line)
+Comment (multi line)
+Comment (///... or /**...)
+Comment (-----)
+Comment (=====)
+Literate text section
+
+Constants
+---------
+Char ('.')
+Uni ('\u....')
+Dynamic string ("...")
+Long dynamic string ("""...  ...""")
+Raw string (''...'')
+Long raw string ('''...  ...''')
+Symbol (`foo)
+Integer value
+Float value
+Real value
+Type suffix
+
+Names
+-----
+Declaration keyword (var, type, etc.)
+Standard keyword (if, return, etc.)
+Operator keyword (new, typeof, is, etc.)
+Custom keyword
+Variable
+Const variable / Auto variable
+Function argument
+Type name
+Property (.foo, .bar, etc.)
+
+Operators
+---------
+Standard (+, -, *, etc.)
+Assignment (=)
+Standard operator assignment (+=)
+Custom operator assignment (where=)
+Custom unary (sin, close, etc.)
+Custom binary (where, open, etc.)
+Range (..)
+
+Specials
+--------
+Function declaration (|x y z|)
+Function call ([x y z])
+Special form ([$if x y z])
+Quoted list (`[ ... ])
+Other quoted form (`...)
+Variable substitution (@x)
+Splice (@@x)
+
+Parse Constructs
+----------------
+Include (#include)
+Include as (... as ...)
+Syntax (#syntax)
+Regex (#/.../)
+Loanword declaration (#loanword)
+Other standard loanword
+Custom loanword
+Syntax class
+Syntax pattern
+Syntax nonterminal
+Syntax arrow
+Syntax with
+
+Loanword Data
+-------------
+JSON default
+JSON property
+JSON keyword (true, false, null)
+JSON substitution (@x, @(x))
+XML/HTML default
+XML/HTML text
+XML/HTML element name
+XML/HTML attribute name
+XML/HTML attribute value
+XML/HTML substitution (@x, @(x))
